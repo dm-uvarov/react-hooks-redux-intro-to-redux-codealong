@@ -8,6 +8,10 @@ function Counter() {
   // gives us the dispatch function to send actions to the Redux store
   const dispatch = useDispatch();
 
+  function handleHover() {
+    dispatch({ type: "hover"});
+  }
+
   function handleOnClick() {
     // dispatching an action on click
     dispatch({ type: "count/increment" });
@@ -15,7 +19,7 @@ function Counter() {
 
   return (
     <div>
-      <button onClick={handleOnClick}>Click</button>
+      <button onClick={handleOnClick} onHover={handleHover}>Click</button>
       <p>{items.length}</p>
     </div>
   );
